@@ -1,0 +1,2713 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is([data-theme-type="dark"] *));
+
+/* ------------------------------------------------------------------ */
+/* VS Code workbench color tokens, one block per theme                 */
+/* ------------------------------------------------------------------ */
+
+:root,
+[data-theme="dark-plus"] {
+  color-scheme: dark;
+  --titlebar: #323233;
+  --titlebar-foreground: #cccccc;
+  --activitybar: #333333;
+  --activitybar-foreground: #ffffff;
+  --activitybar-inactive: #858585;
+  --activitybar-indicator: #ffffff;
+  --badge: #007acc;
+  --badge-foreground: #ffffff;
+  --side: #252526;
+  --side-foreground: #cccccc;
+  --side-title: #bbbbbb;
+  --editor: #1e1e1e;
+  --editor-foreground: #d4d4d4;
+  --line-number: #858585;
+  --line-number-active: #c6c6c6;
+  --line-highlight: #ffffff0a;
+  --indent-guide: #404040;
+  --tabs: #252526;
+  --tab: #2d2d2d;
+  --tab-active: #1e1e1e;
+  --tab-foreground: #969696;
+  --tab-active-foreground: #ffffff;
+  --tab-active-border: #007acc;
+  --tab-border: #252526;
+  --breadcrumb: #a9a9a9;
+  --statusbar: #007acc;
+  --statusbar-foreground: #ffffff;
+  --statusbar-hover: #ffffff1f;
+  --statusbar-remote: #16825d;
+  --statusbar-remote-foreground: #ffffff;
+  --panel: #1e1e1e;
+  --panel-border: #80808059;
+  --line: #2b2b2b;
+  --list-hover: #2a2d2e;
+  --list-active: #37373d;
+  --list-active-foreground: #ffffff;
+  --focus: #007fd4;
+  --field: #3c3c3c;
+  --field-foreground: #cccccc;
+  --field-border: #3c3c3c;
+  --placeholder: #a6a6a6;
+  --widget: #252526;
+  --widget-border: #454545;
+  --quick-selected: #04395e;
+  --quick-selected-foreground: #ffffff;
+  --button: #0e639c;
+  --button-foreground: #ffffff;
+  --button-hover: #1177bb;
+  --link: #3794ff;
+  --description: #9d9d9d;
+  --scrollbar: #79797966;
+  --scrollbar-hover: #646464b3;
+  --selection: #264f78;
+  --match: #ea5c0055;
+  --ansi-black: #000000;
+  --ansi-red: #f14c4c;
+  --ansi-green: #23d18b;
+  --ansi-yellow: #f5f543;
+  --ansi-blue: #3b8eea;
+  --ansi-magenta: #d670d6;
+  --ansi-cyan: #29b8db;
+  --ansi-white: #e5e5e5;
+  --terminal-foreground: #cccccc;
+  --folder: #dcb67a;
+}
+
+[data-theme="light-plus"] {
+  color-scheme: light;
+  --titlebar: #dddddd;
+  --titlebar-foreground: #333333;
+  --activitybar: #2c2c2c;
+  --activitybar-foreground: #ffffff;
+  --activitybar-inactive: #ffffff66;
+  --activitybar-indicator: #ffffff;
+  --badge: #007acc;
+  --badge-foreground: #ffffff;
+  --side: #f3f3f3;
+  --side-foreground: #616161;
+  --side-title: #6f6f6f;
+  --editor: #ffffff;
+  --editor-foreground: #000000;
+  --line-number: #237893;
+  --line-number-active: #0b216f;
+  --line-highlight: #0000000a;
+  --indent-guide: #d3d3d3;
+  --tabs: #f3f3f3;
+  --tab: #ececec;
+  --tab-active: #ffffff;
+  --tab-foreground: #6f6f6f;
+  --tab-active-foreground: #333333;
+  --tab-active-border: #007acc;
+  --tab-border: #f3f3f3;
+  --breadcrumb: #616161cc;
+  --statusbar: #007acc;
+  --statusbar-foreground: #ffffff;
+  --statusbar-hover: #ffffff1f;
+  --statusbar-remote: #16825d;
+  --statusbar-remote-foreground: #ffffff;
+  --panel: #ffffff;
+  --panel-border: #80808059;
+  --line: #e5e5e5;
+  --list-hover: #e8e8e8;
+  --list-active: #e4e6f1;
+  --list-active-foreground: #000000;
+  --focus: #0090f1;
+  --field: #ffffff;
+  --field-foreground: #616161;
+  --field-border: #cecece;
+  --placeholder: #767676;
+  --widget: #f3f3f3;
+  --widget-border: #c8c8c8;
+  --quick-selected: #0060c0;
+  --quick-selected-foreground: #ffffff;
+  --button: #007acc;
+  --button-foreground: #ffffff;
+  --button-hover: #0062a3;
+  --link: #006ab1;
+  --description: #717171;
+  --scrollbar: #64646466;
+  --scrollbar-hover: #646464b3;
+  --selection: #add6ff;
+  --match: #ea5c0055;
+  --ansi-black: #000000;
+  --ansi-red: #cd3131;
+  --ansi-green: #00a35c;
+  --ansi-yellow: #949800;
+  --ansi-blue: #0451a5;
+  --ansi-magenta: #bc05bc;
+  --ansi-cyan: #0598bc;
+  --ansi-white: #555555;
+  --terminal-foreground: #333333;
+  --folder: #c09553;
+}
+
+[data-theme="dracula"] {
+  color-scheme: dark;
+  --titlebar: #21222c;
+  --titlebar-foreground: #f8f8f2;
+  --activitybar: #343746;
+  --activitybar-foreground: #f8f8f2;
+  --activitybar-inactive: #6272a4;
+  --activitybar-indicator: #ff79c6;
+  --badge: #ff79c6;
+  --badge-foreground: #282a36;
+  --side: #21222c;
+  --side-foreground: #f8f8f2;
+  --side-title: #f8f8f2;
+  --editor: #282a36;
+  --editor-foreground: #f8f8f2;
+  --line-number: #6272a4;
+  --line-number-active: #f8f8f2;
+  --line-highlight: #44475a75;
+  --indent-guide: #3b3d4d;
+  --tabs: #191a21;
+  --tab: #21222c;
+  --tab-active: #282a36;
+  --tab-foreground: #6272a4;
+  --tab-active-foreground: #f8f8f2;
+  --tab-active-border: #ff79c6;
+  --tab-border: #191a21;
+  --breadcrumb: #6272a4;
+  --statusbar: #191a21;
+  --statusbar-foreground: #f8f8f2;
+  --statusbar-hover: #ffffff1a;
+  --statusbar-remote: #bd93f9;
+  --statusbar-remote-foreground: #282a36;
+  --panel: #282a36;
+  --panel-border: #44475a;
+  --line: #191a21;
+  --list-hover: #44475a75;
+  --list-active: #44475a;
+  --list-active-foreground: #f8f8f2;
+  --focus: #6272a4;
+  --field: #282a36;
+  --field-foreground: #f8f8f2;
+  --field-border: #191a21;
+  --placeholder: #6272a4;
+  --widget: #21222c;
+  --widget-border: #191a21;
+  --quick-selected: #44475a;
+  --quick-selected-foreground: #f8f8f2;
+  --button: #bd93f9;
+  --button-foreground: #282a36;
+  --button-hover: #ff79c6;
+  --link: #8be9fd;
+  --description: #9fa8c7;
+  --scrollbar: #44475a99;
+  --scrollbar-hover: #6272a4;
+  --selection: #44475a;
+  --match: #ffb86c55;
+  --ansi-black: #21222c;
+  --ansi-red: #ff5555;
+  --ansi-green: #50fa7b;
+  --ansi-yellow: #f1fa8c;
+  --ansi-blue: #bd93f9;
+  --ansi-magenta: #ff79c6;
+  --ansi-cyan: #8be9fd;
+  --ansi-white: #f8f8f2;
+  --terminal-foreground: #f8f8f2;
+  --folder: #bd93f9;
+}
+
+[data-theme="github-dark"] {
+  color-scheme: dark;
+  --titlebar: #24292e;
+  --titlebar-foreground: #e1e4e8;
+  --activitybar: #24292e;
+  --activitybar-foreground: #e1e4e8;
+  --activitybar-inactive: #6a737d;
+  --activitybar-indicator: #f9826c;
+  --badge: #0366d6;
+  --badge-foreground: #ffffff;
+  --side: #1f2428;
+  --side-foreground: #e1e4e8;
+  --side-title: #e1e4e8;
+  --editor: #24292e;
+  --editor-foreground: #e1e4e8;
+  --line-number: #444d56;
+  --line-number-active: #e1e4e8;
+  --line-highlight: #2b3036;
+  --indent-guide: #2f363d;
+  --tabs: #1f2428;
+  --tab: #1f2428;
+  --tab-active: #24292e;
+  --tab-foreground: #959da5;
+  --tab-active-foreground: #e1e4e8;
+  --tab-active-border: #f9826c;
+  --tab-border: #1b1f23;
+  --breadcrumb: #959da5;
+  --statusbar: #24292e;
+  --statusbar-foreground: #d1d5da;
+  --statusbar-hover: #ffffff1a;
+  --statusbar-remote: #0366d6;
+  --statusbar-remote-foreground: #ffffff;
+  --panel: #1f2428;
+  --panel-border: #1b1f23;
+  --line: #1b1f23;
+  --list-hover: #282e34;
+  --list-active: #39414a;
+  --list-active-foreground: #e1e4e8;
+  --focus: #005cc5;
+  --field: #2f363d;
+  --field-foreground: #e1e4e8;
+  --field-border: #1b1f23;
+  --placeholder: #959da5;
+  --widget: #1f2428;
+  --widget-border: #1b1f23;
+  --quick-selected: #39414a;
+  --quick-selected-foreground: #e1e4e8;
+  --button: #176f2c;
+  --button-foreground: #dcffe4;
+  --button-hover: #22863a;
+  --link: #79b8ff;
+  --description: #959da5;
+  --scrollbar: #6a737d55;
+  --scrollbar-hover: #959da588;
+  --selection: #3392ff44;
+  --match: #ffd33d44;
+  --ansi-black: #586069;
+  --ansi-red: #ea4a5a;
+  --ansi-green: #34d058;
+  --ansi-yellow: #ffea7f;
+  --ansi-blue: #2188ff;
+  --ansi-magenta: #b392f0;
+  --ansi-cyan: #39c5cf;
+  --ansi-white: #d1d5da;
+  --terminal-foreground: #d1d5da;
+  --folder: #79b8ff;
+}
+
+[data-theme="one-dark-pro"] {
+  color-scheme: dark;
+  --titlebar: #282c34;
+  --titlebar-foreground: #9da5b4;
+  --activitybar: #282c34;
+  --activitybar-foreground: #d7dae0;
+  --activitybar-inactive: #6b717d;
+  --activitybar-indicator: #528bff;
+  --badge: #4d78cc;
+  --badge-foreground: #f8fafd;
+  --side: #21252b;
+  --side-foreground: #abb2bf;
+  --side-title: #abb2bf;
+  --editor: #282c34;
+  --editor-foreground: #abb2bf;
+  --line-number: #495162;
+  --line-number-active: #abb2bf;
+  --line-highlight: #2c313c;
+  --indent-guide: #3b4048;
+  --tabs: #21252b;
+  --tab: #21252b;
+  --tab-active: #282c34;
+  --tab-foreground: #9da5b4;
+  --tab-active-foreground: #dcdcdc;
+  --tab-active-border: #528bff;
+  --tab-border: #181a1f;
+  --breadcrumb: #9da5b4;
+  --statusbar: #21252b;
+  --statusbar-foreground: #9da5b4;
+  --statusbar-hover: #ffffff14;
+  --statusbar-remote: #4d78cc;
+  --statusbar-remote-foreground: #f8fafd;
+  --panel: #21252b;
+  --panel-border: #3e4452;
+  --line: #181a1f;
+  --list-hover: #2c313a;
+  --list-active: #323842;
+  --list-active-foreground: #d7dae0;
+  --focus: #528bff;
+  --field: #1d1f23;
+  --field-foreground: #abb2bf;
+  --field-border: #181a1f;
+  --placeholder: #5c6370;
+  --widget: #21252b;
+  --widget-border: #181a1f;
+  --quick-selected: #2c313a;
+  --quick-selected-foreground: #d7dae0;
+  --button: #404754;
+  --button-foreground: #ffffff;
+  --button-hover: #4d78cc;
+  --link: #61afef;
+  --description: #7f848e;
+  --scrollbar: #4e566680;
+  --scrollbar-hover: #5a637580;
+  --selection: #67769660;
+  --match: #42557b80;
+  --ansi-black: #3f4451;
+  --ansi-red: #e05561;
+  --ansi-green: #8cc265;
+  --ansi-yellow: #d18f52;
+  --ansi-blue: #4aa5f0;
+  --ansi-magenta: #c162de;
+  --ansi-cyan: #42b3c2;
+  --ansi-white: #d7dae0;
+  --terminal-foreground: #abb2bf;
+  --folder: #e5c07b;
+}
+
+/* Claude's terracotta, used by the chat. Darker on light themes for contrast. */
+:root {
+  --claude: #d97757;
+}
+[data-theme-type="light"] {
+  --claude: #b4532f;
+}
+
+/* shadcn/ui tokens follow the active VS Code theme. */
+:root {
+  --background: var(--editor);
+  --foreground: var(--editor-foreground);
+  --card: var(--widget);
+  --card-foreground: var(--side-foreground);
+  --popover: var(--widget);
+  --popover-foreground: var(--side-foreground);
+  --primary: var(--button);
+  --primary-foreground: var(--button-foreground);
+  --secondary: var(--list-hover);
+  --secondary-foreground: var(--side-foreground);
+  --muted: var(--list-hover);
+  --muted-foreground: var(--description);
+  --accent: var(--quick-selected);
+  --accent-foreground: var(--quick-selected-foreground);
+  --destructive: var(--ansi-red);
+  --border: var(--widget-border);
+  --input: var(--field-border);
+  --ring: var(--focus);
+  --radius: 0.375rem;
+  --code-size: 13px;
+  --code-line: 20px;
+  /* Width of the ASCII portrait; its font size follows from its column count. */
+  --art-width: 520px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --code-size: 14px;
+    --code-line: 22px;
+  }
+}
+
+@theme inline {
+  --color-claude: var(--claude);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, Ubuntu,
+    "Droid Sans", sans-serif;
+  --font-mono: var(--font-blocks), var(--font-code), Menlo, Monaco, Consolas, "Courier New", monospace;
+  --font-heading: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-titlebar: var(--titlebar);
+  --color-titlebar-foreground: var(--titlebar-foreground);
+  --color-activitybar: var(--activitybar);
+  --color-activitybar-foreground: var(--activitybar-foreground);
+  --color-activitybar-inactive: var(--activitybar-inactive);
+  --color-activitybar-indicator: var(--activitybar-indicator);
+  --color-badge: var(--badge);
+  --color-badge-foreground: var(--badge-foreground);
+  --color-side: var(--side);
+  --color-side-foreground: var(--side-foreground);
+  --color-side-title: var(--side-title);
+  --color-editor: var(--editor);
+  --color-editor-foreground: var(--editor-foreground);
+  --color-tabs: var(--tabs);
+  --color-tab: var(--tab);
+  --color-tab-active: var(--tab-active);
+  --color-tab-foreground: var(--tab-foreground);
+  --color-tab-active-foreground: var(--tab-active-foreground);
+  --color-tab-active-border: var(--tab-active-border);
+  --color-tab-border: var(--tab-border);
+  --color-breadcrumb: var(--breadcrumb);
+  --color-statusbar: var(--statusbar);
+  --color-statusbar-foreground: var(--statusbar-foreground);
+  --color-statusbar-hover: var(--statusbar-hover);
+  --color-statusbar-remote: var(--statusbar-remote);
+  --color-statusbar-remote-foreground: var(--statusbar-remote-foreground);
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
+  --color-line: var(--line);
+  --color-list-hover: var(--list-hover);
+  --color-list-active: var(--list-active);
+  --color-list-active-foreground: var(--list-active-foreground);
+  --color-focus: var(--focus);
+  --color-field: var(--field);
+  --color-field-foreground: var(--field-foreground);
+  --color-field-border: var(--field-border);
+  --color-placeholder: var(--placeholder);
+  --color-widget: var(--widget);
+  --color-widget-border: var(--widget-border);
+  --color-quick-selected: var(--quick-selected);
+  --color-quick-selected-foreground: var(--quick-selected-foreground);
+  --color-button: var(--button);
+  --color-button-foreground: var(--button-foreground);
+  --color-button-hover: var(--button-hover);
+  --color-link: var(--link);
+  --color-description: var(--description);
+  --color-match: var(--match);
+  --color-line-number: var(--line-number);
+  --color-ansi-black: var(--ansi-black);
+  --color-ansi-red: var(--ansi-red);
+  --color-ansi-green: var(--ansi-green);
+  --color-ansi-yellow: var(--ansi-yellow);
+  --color-ansi-blue: var(--ansi-blue);
+  --color-ansi-magenta: var(--ansi-magenta);
+  --color-ansi-cyan: var(--ansi-cyan);
+  --color-ansi-white: var(--ansi-white);
+  --color-terminal-foreground: var(--terminal-foreground);
+  --color-folder: var(--folder);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  body {
+    @apply bg-editor font-sans text-editor-foreground antialiased;
+    font-size: 13px;
+  }
+  ::selection {
+    background: var(--selection);
+  }
+  :focus-visible {
+    outline: 1px solid var(--focus);
+    outline-offset: -1px;
+  }
+}
+
+/* iOS Safari zooms into inputs smaller than 16px on focus. */
+@media (max-width: 767px) {
+  input,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* VS Code-style square scrollbars */
+@supports selector(::-webkit-scrollbar) {
+  .vsc-scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .vsc-scroll::-webkit-scrollbar-track,
+  .vsc-scroll::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  .vsc-scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .vsc-scroll:hover::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+  }
+  .vsc-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+  }
+}
+@supports not selector(::-webkit-scrollbar) {
+  .vsc-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+  }
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Editor (Shiki output)                                               */
+/* ------------------------------------------------------------------ */
+
+.code-view {
+  --gutter: 3.25rem;
+  --tab: 2;
+  container-type: inline-size;
+  font-family: var(--font-mono);
+  font-size: var(--code-size);
+  line-height: var(--code-line);
+  font-variant-ligatures: contextual;
+}
+@media (min-width: 768px) {
+  .code-view {
+    --gutter: 4.5rem;
+  }
+}
+.code-view pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+}
+.code-view code {
+  display: block;
+  font: inherit;
+  padding-bottom: 40vh;
+}
+.code-view .line {
+  --hang: 0;
+  --guides: 0;
+  position: relative;
+  display: block;
+  min-height: var(--code-line);
+  padding-left: calc(var(--gutter) + var(--hang) * 1ch);
+  padding-right: 1.5rem;
+  text-indent: calc(var(--hang) * -1ch);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--editor-foreground);
+}
+/* Line numbers */
+.code-view .line::before {
+  content: attr(data-line);
+  position: absolute;
+  left: 0;
+  width: calc(var(--gutter) - 1.6rem);
+  text-indent: 0;
+  text-align: right;
+  color: var(--line-number);
+  user-select: none;
+  pointer-events: none;
+}
+/* Indent guides */
+.code-view .line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--gutter);
+  width: calc(var(--guides) * var(--tab) * 1ch);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--indent-guide) 0 1px,
+    transparent 1px calc(var(--tab) * 1ch)
+  );
+  pointer-events: none;
+}
+.code-view .line.is-active {
+  background: linear-gradient(
+    90deg,
+    transparent calc(var(--gutter) - 0.5rem),
+    var(--line-highlight) calc(var(--gutter) - 0.5rem)
+  );
+}
+.code-view .line.is-active::before {
+  color: var(--line-number-active);
+}
+.code-view .line.is-flash {
+  animation: line-flash 1.6s ease-out;
+}
+@keyframes line-flash {
+  0%,
+  40% {
+    background-color: var(--match);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+/* ASCII portrait (```ascii fence): never wraps. More columns means a smaller font at the same
+   width (--art-width, or the editor if narrower). Cells are 0.6em × 1em, the aspect ratio
+   scripts/ascii-portrait.mjs generates for. */
+.code-view .line.art {
+  font-size: calc(min(var(--art-width), 100cqw - var(--gutter) - 1.5rem) / (var(--art-cols) * 0.6));
+  line-height: 1;
+  min-height: 0;
+  white-space: pre;
+  overflow-wrap: normal;
+  font-variant-ligatures: none;
+}
+/* A folder revealed from a link (README's Projects card) glows in the explorer — the folder and its
+   files — pulsing twice before it fades (see TreeRow). */
+.explorer-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--focus) 26%, transparent),
+    color-mix(in srgb, var(--focus) 8%, transparent)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--focus) 75%, transparent),
+    inset 0 0 14px color-mix(in srgb, var(--focus) 35%, transparent);
+  pointer-events: none;
+  animation: explorer-glow 2.4s ease-out both;
+}
+@keyframes explorer-glow {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 0.35;
+  }
+  52% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .explorer-glow {
+    animation-name: explorer-glow-calm;
+  }
+  @keyframes explorer-glow-calm {
+    0%,
+    60% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+/* The 15-high-five shutdown (see Shutdown): the workbench switches off like an old CRT, collapsing to a
+   bright line, then a dot, on a black screen; then warms back on after the boot log. */
+html[data-power] body {
+  background: #000;
+}
+.workbench-root::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+html[data-power="shutting-down"] .workbench-root {
+  animation: crt-off 0.95s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+}
+html[data-power="shutting-down"] .workbench-root::after {
+  animation: crt-flash 0.95s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+}
+html[data-power="off"] .workbench-root,
+html[data-power="booting"] .workbench-root {
+  visibility: hidden;
+}
+html[data-power="waking"] .workbench-root {
+  animation: crt-on 0.75s ease-out both;
+}
+html[data-power="waking"] .workbench-root::after {
+  animation: crt-flash 0.75s ease-out reverse both;
+}
+@keyframes crt-off {
+  0% {
+    transform: none;
+    filter: none;
+  }
+  10% {
+    filter: brightness(1.5) contrast(1.2);
+  }
+  45% {
+    transform: scale(1, 0.004);
+    filter: brightness(3);
+  }
+  75% {
+    transform: scale(0.004, 0.004);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes crt-on {
+  0% {
+    transform: scale(0.004, 0.004);
+    filter: brightness(3);
+  }
+  35% {
+    transform: scale(1, 0.004);
+    filter: brightness(3);
+  }
+  70% {
+    transform: none;
+    filter: brightness(1.4);
+  }
+  100% {
+    transform: none;
+    filter: none;
+  }
+}
+@keyframes crt-flash {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  45%,
+  100% {
+    opacity: 0.95;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-power="shutting-down"] .workbench-root {
+    animation: crt-fade 0.4s ease forwards;
+  }
+  html[data-power="waking"] .workbench-root {
+    animation: crt-fade 0.3s ease reverse both;
+  }
+  html[data-power] .workbench-root::after {
+    animation: none;
+  }
+  @keyframes crt-fade {
+    to {
+      opacity: 0;
+    }
+  }
+}
+.shutdown {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: #000;
+  color: #c8c8c8;
+  font-family: var(--font-mono);
+  animation: shutdown-in 0.4s ease both;
+}
+.shutdown-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 100%;
+}
+.shutdown-logo {
+  --ansi-green: #1f7a4d;
+  width: 4.5rem;
+  color: #6b6b6b;
+}
+.shutdown-log {
+  margin: 0;
+  font-size: clamp(11px, 1.6vw, 14px);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+.shutdown-halted {
+  color: #fff;
+  font-weight: 700;
+}
+.shutdown-boot > span {
+  display: block;
+  animation: shutdown-in 0.01s steps(1) backwards;
+}
+.shutdown-boot b {
+  color: #23d18b;
+  font-weight: 600;
+}
+.shutdown-restart {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  background: transparent;
+  color: #c8c8c8;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  animation: shutdown-blink 1.2s steps(1) infinite;
+}
+.shutdown-restart svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #23d18b;
+}
+.shutdown-restart:hover,
+.shutdown-restart:focus-visible {
+  border-color: #23d18b;
+  color: #fff;
+  outline: none;
+  animation: none;
+}
+@keyframes shutdown-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes shutdown-blink {
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shutdown,
+  .shutdown-restart {
+    animation: none;
+  }
+}
+
+/* The chat's start page: a speech bubble under the banner, the assistant offering the README's secret (see
+   SecretBubble). It pops up a moment after the panel opens, then bobs gently. */
+.chat-bubble {
+  --bubble-bg: color-mix(in srgb, var(--claude) 12%, var(--side));
+  --bubble-line: color-mix(in srgb, var(--claude) 65%, var(--side));
+  position: relative;
+  align-self: center;
+  margin-top: -0.25rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--bubble-line);
+  border-radius: 14px;
+  background: var(--bubble-bg);
+  color: var(--side-foreground);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+/* Its tail, pointing up at the banner. */
+.chat-bubble::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 5px);
+  width: 9px;
+  height: 9px;
+  border-top: 1px solid var(--bubble-line);
+  border-left: 1px solid var(--bubble-line);
+  background: var(--bubble-bg);
+  transform: rotate(45deg);
+  transition: inherit;
+}
+.chat-bubble:hover {
+  --bubble-bg: color-mix(in srgb, var(--claude) 22%, var(--side));
+  --bubble-line: var(--claude);
+}
+.chat-bubble:focus-visible {
+  outline: 1px solid var(--focus);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chat-bubble {
+    transform-origin: 50% 0;
+    animation:
+      bubble-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s backwards,
+      bubble-bob 3s ease-in-out 1.4s infinite;
+  }
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.6);
+  }
+}
+@keyframes bubble-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 3px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Markdown preview (README)                                           */
+/* ------------------------------------------------------------------ */
+
+.md-preview {
+  --md-gutter: 1.5rem;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.75rem var(--md-gutter) 4rem;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--editor-foreground);
+}
+@media (min-width: 768px) {
+  .md-preview {
+    --md-gutter: 2.5rem;
+  }
+}
+.md-preview pre:has(> .ascii-art) {
+  container-type: inline-size;
+  margin: 0 0 1.25rem;
+}
+/* The README hero (everything above the first ##): a terminal prompt, the greeting, the tagline and
+   the fact chips, over a soft blue-green glow with the logo's dot texture, fading out at the edges. */
+/* It fills the first screen (the scroll area's height, less the preview's top padding): the mountains
+   along the bottom like a horizon, then the scroll cue, and the greeting block (md-hero-main: the
+   prompt to the fact chips) centred in the sky above them. Everything else is below the fold, and
+   reveals itself as it scrolls in. */
+.md-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100cqh - 1.75rem);
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+.md-hero-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-block: auto;
+}
+/* "Scroll down", under the mountains: a mouse whose wheel rolls, beside a label. Where the hero runs
+   past the first screen (phones), it sticks to the foot of the screen instead. It bobs, and fades away
+   as soon as the README scrolls. */
+.md-preview .md-scroll-cue {
+  position: sticky;
+  bottom: 0.75rem;
+  z-index: 1;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.3rem 0.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--editor) 70%, transparent);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  letter-spacing: 0.06em;
+  color: var(--description);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.md-preview .md-scroll-cue:hover {
+  color: var(--editor-foreground);
+}
+.md-scroll-cue-mouse {
+  position: relative;
+  width: 0.85rem;
+  height: 1.3rem;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+}
+.md-scroll-cue-mouse::before {
+  content: "";
+  position: absolute;
+  top: 0.22rem;
+  left: 50%;
+  width: 2px;
+  height: 0.3rem;
+  margin-left: -1px;
+  border-radius: 2px;
+  background: var(--ansi-green);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .md-preview .md-scroll-cue {
+    animation: cue-bob 2.2s ease-in-out infinite;
+  }
+  .md-scroll-cue-mouse::before {
+    animation: cue-wheel 1.6s ease-in-out infinite;
+  }
+  @supports (animation-timeline: scroll()) {
+    .md-preview .md-scroll-cue {
+      animation:
+        cue-bob 2.2s ease-in-out infinite,
+        cue-away linear both;
+      animation-timeline: auto, scroll();
+      animation-range: normal, 0 6rem;
+    }
+  }
+}
+@keyframes cue-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 4px;
+  }
+}
+@keyframes cue-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+}
+@keyframes cue-away {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* The glow and dots behind the greeting block, centred on it wherever it sits. */
+.md-hero-main::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: calc(50% - 17rem);
+  left: calc(50% - 50cqw);
+  right: calc(50% - 50cqw);
+  height: 34rem;
+  background:
+    radial-gradient(55% 50% at 50% 46%, color-mix(in srgb, var(--link) 15%, transparent), transparent 72%),
+    radial-gradient(34% 34% at 66% 56%, color-mix(in srgb, var(--ansi-green) 13%, transparent), transparent 70%),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--editor-foreground) 11%, transparent) 1px, transparent 1.6px)
+      0 0 / 16px 16px;
+  -webkit-mask-image: radial-gradient(65% 60% at 50% 48%, #000 35%, transparent 78%);
+  mask-image: radial-gradient(65% 60% at 50% 48%, #000 35%, transparent 78%);
+  pointer-events: none;
+}
+/* "~/portfolio $ whoami" — the greeting below is the answer. It types the command as the intro starts,
+   and clicking it replays the intro (see HeroPrompt). */
+.md-preview .md-hero-prompt {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.4rem;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--editor) 75%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--description);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.md-preview .md-hero-prompt:hover {
+  border-color: color-mix(in srgb, var(--focus) 70%, var(--line));
+}
+.md-hero-command {
+  color: var(--editor-foreground);
+}
+/* A terminal's caret holds still while you type. */
+.md-hero-prompt.is-typing .md-hero-caret {
+  animation: none;
+}
+/* Until the intro decides to play, keep the server-rendered greeting (and its command) out of sight. */
+html[data-intro] .greeting,
+html[data-intro] .md-hero-command {
+  visibility: hidden;
+}
+/* The tagline and fact chips under the greeting wait for the intro to finish, then rise in, one after
+   the other. (They keep their space meanwhile, so nothing below moves.) */
+.md-hero-main > pre:has(> .greeting) ~ :is(p, .md-facts),
+.md-preview .md-scroll-cue {
+  transition:
+    opacity 0.5s ease 0.2s,
+    transform 0.5s ease 0.2s;
+}
+.md-hero-main > pre:has(> .greeting) ~ .md-facts {
+  transition-delay: 0.35s;
+}
+html[data-intro] .md-hero-main > pre:has(> .greeting) ~ :is(p, .md-facts),
+.md-hero-main > pre:has(> .greeting.is-playing) ~ :is(p, .md-facts),
+html[data-intro] .md-scroll-cue,
+.md-hero:has(.greeting.is-playing) .md-scroll-cue {
+  opacity: 0;
+  transform: translateY(10px);
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-hero-main > pre:has(> .greeting) ~ :is(p, .md-facts),
+  .md-preview .md-scroll-cue {
+    transition: none;
+  }
+}
+.greeting.is-playing {
+  cursor: pointer;
+}
+/* The greeting has landed at the end of the intro: the hand pops up, then waves. */
+@media (prefers-reduced-motion: no-preference) {
+  .greeting.is-landed .ascii-wave:not(.is-still) {
+    animation:
+      hand-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+      ascii-wave 2.6s ease-in-out 0.5s infinite;
+  }
+}
+@keyframes hand-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.8em) rotate(-24deg) scale(0.5);
+  }
+}
+.md-hero-path {
+  color: var(--ansi-green);
+}
+.md-hero-caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 0.3em;
+  vertical-align: -0.18em;
+  background: var(--editor-foreground);
+  animation: hero-caret 1.1s steps(1) infinite;
+}
+@keyframes hero-caret {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-hero-caret {
+    animation: none;
+  }
+}
+/* The lettering's ░ shading in the theme's green, like the logo's dotted shadow. */
+.ascii-shade {
+  color: var(--ansi-green);
+}
+/* Hero: the lettering, then the tagline as a centred lead paragraph, then the fact chips. */
+.md-preview pre:has(> .ascii-art) + p {
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: balance;
+  font-size: 1.2em;
+  line-height: 1.55;
+  color: var(--editor-foreground);
+}
+.md-preview h1,
+.md-preview h2 {
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+.md-preview h1 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 2em;
+}
+.md-preview h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.45rem;
+  font-size: 1.3em;
+}
+/* A nod to the markdown source. */
+.md-preview h2::before {
+  content: "##";
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  font-weight: 500;
+  color: var(--link);
+}
+.md-preview p {
+  margin: 0.75rem 0;
+}
+.md-preview a {
+  color: var(--link);
+  text-underline-offset: 2px;
+}
+.md-preview a:hover {
+  text-decoration: underline;
+}
+.md-preview strong {
+  font-weight: 600;
+}
+.md-preview code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--list-hover);
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+.md-preview blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+  border-left: 3px solid color-mix(in srgb, var(--link) 60%, transparent);
+  background: color-mix(in srgb, var(--list-hover) 60%, transparent);
+}
+
+/* Plain lists: accent markers, and figures in the accent colour. */
+.md-preview ul:not([class]),
+.md-preview ol {
+  margin: 0.85rem 0;
+  padding-left: 1.4rem;
+}
+.md-preview ul:not([class]) {
+  list-style: none;
+}
+.md-preview ul:not([class]) > li {
+  position: relative;
+  margin: 0.45rem 0;
+}
+.md-preview ul:not([class]) > li::before {
+  content: "▹";
+  position: absolute;
+  left: -1.15rem;
+  color: var(--link);
+}
+.md-preview ul:not([class]) strong {
+  color: var(--link);
+}
+
+/* "My story": a timeline of cards, each step's badge (its first technology's logo) on a line that runs
+   from blue to green, arriving at today. --from/--to are how far along that blend a step sits; hovering
+   a step lights it up. */
+.md-preview .md-story {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.md-story-step {
+  --c: color-mix(in srgb, var(--ansi-green) var(--from), var(--link));
+  --badge: 2.25rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--badge) minmax(0, 1fr);
+  column-gap: 1rem;
+  padding-bottom: 0.85rem;
+}
+.md-story-step:last-child {
+  padding-bottom: 0;
+}
+/* The line from this step's badge down to the next one's. */
+.md-story-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--badge) / 2 - 1px);
+  top: var(--badge);
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--c), color-mix(in srgb, var(--ansi-green) var(--to), var(--link)));
+  opacity: 0.55;
+}
+.md-story-badge {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--badge);
+  height: var(--badge);
+  border: 1.5px solid color-mix(in srgb, var(--c) 60%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 12%, var(--editor));
+  color: var(--c);
+  font-size: 1rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.md-story-card {
+  min-width: 0;
+  padding: 0.65rem 0.95rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--list-hover) 40%, transparent);
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    transform 0.2s ease;
+}
+.md-story-step:hover .md-story-card {
+  border-color: color-mix(in srgb, var(--c) 55%, var(--line));
+  background: color-mix(in srgb, var(--c) 7%, transparent);
+  transform: translateX(3px);
+}
+.md-story-step:hover .md-story-badge {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--c) 16%, transparent);
+}
+.md-story-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.md-story-num {
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  color: var(--c);
+}
+.md-story-title {
+  color: var(--editor-foreground);
+}
+.md-preview .md-story-text {
+  margin: 0.2rem 0 0;
+  color: color-mix(in srgb, var(--editor-foreground) 80%, transparent);
+}
+.md-story-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.md-story-tags > li {
+  padding: 0.05rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  color: var(--description);
+}
+/* Today, lit up in green. */
+.md-story-step.is-now .md-story-badge {
+  border-color: var(--ansi-green);
+  background: var(--ansi-green);
+  color: var(--editor);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--ansi-green) 18%, transparent);
+}
+.md-story-step.is-now .md-story-card {
+  border-color: color-mix(in srgb, var(--ansi-green) 40%, var(--line));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--ansi-green) 10%, transparent), transparent 70%);
+}
+@media (max-width: 480px) {
+  .md-story-step {
+    --badge: 2rem;
+    column-gap: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-story-badge,
+  .md-story-card {
+    transition: none;
+  }
+  .md-story-step:hover .md-story-card {
+    transform: none;
+  }
+}
+
+/* Link cards (Quick links): an icon tile, the title and description, and where the link leads along
+   the bottom. A spotlight follows the mouse across a card (--mx/--my, set by linkCards). In Quick links
+   the first card, About me, gets the whole row; on phones the cards become one compact list. */
+.md-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 0.75rem;
+  margin: 1.1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.md-preview a.md-card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "icon body arrow"
+    "path path path";
+  column-gap: 0.85rem;
+  height: 100%;
+  padding: 0.9rem 1rem 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--list-hover) 40%, transparent);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.md-preview a.md-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(
+    16rem circle at var(--mx) var(--my),
+    color-mix(in srgb, var(--focus) 14%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.md-preview a.md-card:hover,
+.md-preview a.md-card:focus-visible {
+  border-color: color-mix(in srgb, var(--focus) 70%, var(--line));
+  box-shadow: 0 12px 26px -16px rgb(0 0 0 / 0.55);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.md-preview a.md-card:hover::before,
+.md-preview a.md-card:focus-visible::before {
+  opacity: 1;
+}
+.md-card-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--editor-foreground) 5%, transparent);
+  transition: transform 0.2s ease;
+}
+.md-card-icon > svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.md-preview a.md-card:hover .md-card-icon {
+  transform: rotate(-6deg) scale(1.06);
+}
+.md-card-body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.md-card-title {
+  font-weight: 600;
+  color: var(--editor-foreground);
+}
+.md-card-desc {
+  font-size: 0.85em;
+  line-height: 1.45;
+  color: var(--description);
+}
+.md-card-arrow {
+  grid-area: arrow;
+  margin-top: 0.2rem;
+  color: var(--description);
+  opacity: 0.45;
+  transition:
+    color 0.2s,
+    opacity 0.2s,
+    transform 0.2s ease;
+}
+.md-preview a.md-card:hover .md-card-arrow,
+.md-preview a.md-card:focus-visible .md-card-arrow {
+  color: var(--link);
+  opacity: 1;
+  transform: translateX(3px);
+}
+.md-card-path {
+  grid-area: path;
+  margin-top: 0.8rem;
+  padding: 0.45rem 0 0.55rem;
+  border-top: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  color: var(--description);
+  transition: color 0.2s;
+}
+.md-preview a.md-card:hover .md-card-path {
+  color: var(--link);
+}
+/* Quick links: About me, the place to start, gets the whole row. */
+section[data-section="quick-links"] .md-cards > li:first-child {
+  grid-column: 1 / -1;
+}
+.md-preview section[data-section="quick-links"] .md-cards > li:first-child a.md-card {
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--link) 11%, transparent), transparent 60%),
+    color-mix(in srgb, var(--list-hover) 40%, transparent);
+}
+section[data-section="quick-links"] .md-cards > li:first-child .md-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+section[data-section="quick-links"] .md-cards > li:first-child .md-card-icon > svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+section[data-section="quick-links"] .md-cards > li:first-child .md-card-title {
+  font-size: 1.08em;
+}
+@media (max-width: 767px) {
+  .md-cards {
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    /* clip, not hidden: hidden would make the list a scroll container of its own, and its cards'
+       scroll-out fades would then measure against the list instead of the screen. */
+    overflow: clip;
+  }
+  .md-cards > li + li {
+    border-top: 1px solid var(--line);
+  }
+  .md-preview a.md-card,
+  .md-preview section[data-section="quick-links"] .md-cards > li:first-child a.md-card {
+    grid-template-rows: auto;
+    grid-template-areas: "icon body arrow";
+    align-items: center;
+    padding: 0.75rem 0.85rem;
+    border: 0;
+    border-radius: 0;
+  }
+  .md-preview a.md-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .md-card-path {
+    display: none;
+  }
+  .md-card-arrow {
+    margin: 0;
+    opacity: 0.7;
+  }
+  section[data-section="quick-links"] .md-cards > li:first-child .md-card-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-preview a.md-card,
+  .md-card-icon,
+  .md-card-arrow {
+    transition: none;
+  }
+  .md-preview a.md-card:hover,
+  .md-preview a.md-card:hover .md-card-icon,
+  .md-preview a.md-card:hover .md-card-arrow {
+    transform: none;
+  }
+}
+/* "I'd love to work with you": its contact links as a stack of simple black cards (see ContactStack),
+   one per way to reach me, layered like a wallet: the front card whole, the ones behind showing their
+   header strips. Picking a strip slides that card to the front; hovering the stack fans the strips
+   apart a little. The cards keep their own palette: black on any theme. */
+.md-preview section[data-section="id-love-to-work-with-you"] h2::before {
+  color: var(--ansi-green);
+}
+.md-callcard-scene {
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem 0 0.75rem;
+}
+.md-stack {
+  --band: 3rem;
+  --card-h: 11.75rem;
+  --card-ink: #f2f2f2;
+  --card-muted: #8e8e8e;
+  --card-line: rgb(255 255 255 / 0.1);
+  --ansi-green: #23d18b;
+  container-type: inline-size;
+  position: relative;
+  width: min(100%, 34rem);
+  height: calc(var(--card-h) + (var(--count) - 1) * var(--band));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: height 0.3s ease;
+}
+.md-stack > li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--p);
+  height: var(--card-h);
+  transform: translateY(calc(var(--p) * var(--band)));
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (hover: hover) {
+  .md-stack:hover {
+    --band: 3.4rem;
+  }
+  .md-stack > li:not(.is-front):hover {
+    transform: translateY(calc(var(--p) * var(--band) - 0.45rem));
+  }
+  .md-stack > li.is-front:hover {
+    transform: translateY(calc(var(--p) * var(--band) - 0.2rem));
+  }
+}
+.md-preview a.md-contact {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  background: radial-gradient(120% 100% at 0% 0%, #1d1e21 0%, #121214 55%, #0b0b0c 100%);
+  color: var(--card-ink);
+  text-decoration: none;
+  /* The shadow falls upward, onto the card behind, so the layers read. */
+  box-shadow:
+    0 -12px 24px -16px rgb(0 0 0 / 0.8),
+    inset 0 1px 0 rgb(255 255 255 / 0.06);
+}
+.md-stack > li.is-front a.md-contact {
+  box-shadow:
+    0 -12px 24px -16px rgb(0 0 0 / 0.8),
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 26px 50px -26px rgb(0 0 0 / 0.65);
+}
+.md-preview a.md-contact:hover {
+  text-decoration: none;
+}
+.md-preview a.md-contact:focus-visible,
+.md-contact-pick:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.md-contact-band {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3rem;
+  padding: 0 1.1rem;
+}
+.md-contact-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.md-contact-icon > svg,
+.md-contact-icon > span {
+  color: var(--accent);
+}
+.md-contact-title {
+  font-size: 0.95em;
+  font-weight: 600;
+}
+.md-contact-peek {
+  min-width: 0;
+  margin-left: auto;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.74em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--card-muted);
+}
+.md-contact-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--ansi-green) 40%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ansi-green) 8%, transparent);
+  color: var(--ansi-green);
+  font-size: 0.72em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.md-contact-status::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--ansi-green);
+  animation: chip-pulse 2s ease-out infinite;
+}
+.md-contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  padding: 0.55rem 1.1rem 0;
+}
+.md-contact-handle {
+  font: 600 1.18em/1.3 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.md-contact-desc {
+  font-size: 0.88em;
+  color: var(--card-muted);
+}
+.md-contact-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding: 0.75rem 1.1rem 0.85rem;
+  border-top: 1px solid var(--card-line);
+}
+.md-contact-logo {
+  flex: none;
+  width: 2.1rem;
+  color: var(--card-ink);
+}
+.md-contact-logo .pixel-logo-shadow {
+  transition: transform 0.25s ease;
+}
+.md-contact:hover .md-contact-logo .pixel-logo-shadow {
+  transform: translate(-3px, 3px);
+}
+.md-contact-who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 0.76em;
+  line-height: 1.35;
+}
+.md-contact-who b {
+  font-weight: 600;
+}
+.md-contact-who span {
+  color: var(--card-muted);
+}
+.md-contact-cta {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.md-contact-cta > span {
+  transition: transform 0.15s;
+}
+.md-contact:hover .md-contact-cta > span {
+  transform: translateX(3px);
+}
+/* Behind the front card only the strips show: the rest stays blank as the stack fans apart, and fades
+   in as a card comes to the front. */
+.md-contact-body,
+.md-contact-foot {
+  transition: opacity 0.3s ease 0.1s;
+}
+.md-stack > li:not(.is-front) :is(.md-contact-body, .md-contact-foot) {
+  opacity: 0;
+  transition-delay: 0s;
+}
+/* Each card behind the front one: its visible strip is a button that brings it forward. */
+.md-contact-pick {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: var(--band);
+  border: 0;
+  border-radius: 16px 16px 0 0;
+  background: transparent;
+  cursor: pointer;
+}
+/* A narrow stack (phones, or the editor squeezed by the sidebar and chat). */
+@container (max-width: 26rem) {
+  .md-contact-peek,
+  .md-contact-who span {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-stack,
+  .md-stack > li,
+  .md-contact-logo .pixel-logo-shadow,
+  .md-contact-cta > span,
+  .md-contact-body,
+  .md-contact-foot {
+    transition: none;
+  }
+  .md-contact-status::before {
+    animation: none;
+  }
+}
+/* Fact chips under the tagline. */
+.md-facts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0.5rem;
+}
+.md-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--editor) 70%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-size: 0.82em;
+}
+.md-chip-status::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--ansi-green);
+  animation: chip-pulse 2s ease-out infinite;
+}
+@keyframes chip-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--ansi-green) 60%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 0.4rem transparent;
+  }
+}
+
+/* Tables, with shortcuts drawn as keycaps. */
+.md-table {
+  margin: 1rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.md-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.md-table th,
+.md-table td {
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.md-table th {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--list-hover) 70%, transparent);
+}
+.md-table tr:last-child td {
+  border-bottom: 0;
+}
+.md-table td code {
+  padding: 0.05em 0.45em;
+  border: 1px solid var(--widget-border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--widget);
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+/* README scenery between the hero and Quick links: quiet, so it reads as a divider. It may spill
+   past the text column, out to the editor's edges (less a small margin), but no wider than 56rem. */
+.md-preview pre:has(> .md-mountains) {
+  --mountain-margin: 1rem;
+  margin: 2rem calc(50% - 50cqw + var(--mountain-margin)) 0.5rem;
+}
+@media (max-width: 767px) {
+  .md-preview pre:has(> .md-mountains) {
+    --mountain-margin: 0.5rem;
+  }
+}
+/* Its layers (see Mountains) are stacked in one cell, the sky and far range behind the near ridges.
+   (Doubled up to beat .ascii-art's display, further down.) */
+.ascii-art.md-mountains {
+  display: grid;
+  color: var(--description);
+}
+.md-mountains > span {
+  grid-area: 1 / 1;
+}
+.md-mountains-far {
+  opacity: 0.6;
+}
+/* The scenery lives (see Mountains): the birds flap and glide in lazy loops, the sun glows by day and
+   the moon and stars by night (html[data-sky], set by the visitor's clock), and the grass sways in a
+   wave across the ground. */
+.md-mountains-sky {
+  position: relative;
+}
+.md-sky-body,
+.md-star {
+  position: absolute;
+  white-space: pre;
+}
+.md-sky-sun {
+  color: color-mix(in srgb, var(--ansi-yellow) 55%, var(--description));
+  animation: sun-glow 6s ease-in-out infinite;
+}
+.md-sky-moon {
+  color: color-mix(in srgb, var(--editor-foreground) 85%, var(--description));
+  animation: moon-glow 7s ease-in-out infinite;
+}
+.md-star {
+  color: var(--editor-foreground);
+  animation: twinkle 3.5s ease-in-out var(--twinkle) infinite;
+}
+html[data-sky="night"] .md-sky-sun,
+html:not([data-sky="night"]) .md-sky-moon,
+html:not([data-sky="night"]) .md-star {
+  display: none;
+}
+@keyframes moon-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 0.3em color-mix(in srgb, var(--editor-foreground) 25%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 0.9em color-mix(in srgb, var(--editor-foreground) 45%, transparent);
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes sun-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 0.3em color-mix(in srgb, var(--ansi-yellow) 25%, transparent);
+  }
+  50% {
+    text-shadow:
+      0 0 0.9em color-mix(in srgb, var(--ansi-yellow) 60%, transparent),
+      0 0 0.2em color-mix(in srgb, var(--ansi-yellow) 45%, transparent);
+  }
+}
+.md-bird {
+  position: absolute;
+  animation: bird-glide var(--glide) ease-in-out var(--delay) infinite;
+}
+.md-bird > span {
+  display: inline-block;
+  transform-origin: 50% 40%;
+  animation: bird-flap var(--flap) ease-in-out var(--delay) infinite;
+}
+@keyframes bird-glide {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  25% {
+    translate: 4ch -0.6em;
+  }
+  50% {
+    translate: 8ch 0;
+  }
+  75% {
+    translate: 4ch 0.6em;
+  }
+}
+/* A few wingbeats (the v folding up into a ^ and back), then a glide. */
+@keyframes bird-flap {
+  0%,
+  20%,
+  40%,
+  100% {
+    transform: scaleY(1);
+  }
+  10%,
+  30% {
+    transform: scaleY(-0.7);
+  }
+}
+.md-grass {
+  display: inline-block;
+  color: color-mix(in srgb, var(--ansi-green) 55%, var(--description));
+  transform-origin: 50% 100%;
+  animation: grass-sway 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--x) * -0.05s);
+}
+@keyframes grass-sway {
+  0%,
+  100% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(-16deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-sky-sun,
+  .md-sky-moon,
+  .md-star,
+  .md-bird,
+  .md-bird > span,
+  .md-grass {
+    animation: none;
+  }
+}
+.md-mountains-ridge {
+  color: color-mix(in srgb, var(--editor-foreground) 75%, transparent);
+}
+.md-mountains-shade {
+  opacity: 0.6;
+}
+
+/* Parallax, where the browser can tie animations to scrolling (and not with reduced motion):
+   - the hero sinks behind the page as the README scrolls away from it, its layers pulling apart: the
+     glow and dots slowest, then the prompt and greeting (which fade), the tagline, the chips;
+   - the mountains' sky and far range lag behind the near ridges;
+   - the calling card floats up a little faster than the page. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .md-hero-main::before,
+    .md-hero-main > .md-hero-prompt,
+    .md-hero-main > pre:has(> .greeting),
+    .md-hero-main > pre:has(> .greeting) + p,
+    .md-hero-main > .md-facts {
+      animation: parallax-sink linear both;
+      animation-timeline: scroll();
+      animation-range: 0 32rem;
+    }
+    .md-hero-main::before {
+      --sink: 12rem;
+    }
+    .md-hero-main > .md-hero-prompt {
+      --sink: 7rem;
+      animation-name: parallax-sink, parallax-fade;
+    }
+    .md-hero-main > pre:has(> .greeting) {
+      --sink: 6rem;
+      animation-name: parallax-sink, parallax-fade;
+    }
+    .md-hero-main > pre:has(> .greeting) + p {
+      --sink: 3.5rem;
+      animation-name: parallax-sink, parallax-fade;
+    }
+    .md-hero-main > .md-facts {
+      --sink: 1.75rem;
+      animation-name: parallax-sink, parallax-fade;
+    }
+    .md-mountains {
+      view-timeline: --mountains block;
+    }
+    .md-mountains-sky,
+    .md-mountains-far {
+      animation: parallax-recede linear both;
+      animation-timeline: --mountains;
+      animation-range: cover;
+    }
+    .md-mountains-sky {
+      --recede: 3rem;
+    }
+    .md-mountains-far {
+      --recede: 1.25rem;
+    }
+    /* Below the hero, each section rises in as one once it's well into view: it waits until 10rem
+       of it is on screen, then pops in over the next 14rem, however tall it is. The sign-off and the
+       runner game, at the very bottom (where the page can't scroll on that far), by the time each is
+       all in view. */
+    .md-preview > section,
+    .md-preview > footer,
+    .md-preview > .md-dino {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 10rem entry 24rem;
+    }
+    /* And on the way out: each item (a heading, a card, a story step, the mountains…) starts to fade
+       while still 7rem below the top of the editor, and is gone (blurred, drifting up, a touch smaller)
+       by the time most of it has passed under the edge. */
+    .md-preview > section > :not(.md-cards, .md-story, .md-callcard-scene),
+    .md-cards > li,
+    .md-story-step,
+    .md-hero > pre:has(> .md-mountains) {
+      animation: fade-away linear both;
+      animation-timeline: view();
+      animation-range: exit -7rem exit 70%;
+    }
+    .md-preview > footer,
+    .md-preview > .md-dino {
+      animation:
+        reveal-up linear both,
+        fade-away linear both;
+      animation-timeline: view(), view();
+      animation-range:
+        entry 0% entry 100%,
+        exit -7rem exit 70%;
+    }
+    .md-callcard-scene {
+      animation:
+        parallax-float linear both,
+        fade-away linear both;
+      animation-timeline: view(), view();
+      animation-range:
+        cover,
+        exit -7rem exit 70%;
+    }
+    /* On a phone's short screen those ranges overlap, leaving what's being read half blurred: there,
+       sections rise in sooner and more gently, and items only fade (barely blurring) once they reach
+       the top edge. */
+    @media (max-width: 767px) {
+      .md-preview > section {
+        animation-name: reveal-up-soft;
+        animation-range: entry 2rem entry 14rem;
+      }
+      .md-preview > section > :not(.md-cards, .md-story, .md-callcard-scene),
+      .md-cards > li,
+      .md-story-step,
+      .md-hero > pre:has(> .md-mountains) {
+        animation-name: fade-away-soft;
+        animation-range: exit 0% exit 85%;
+      }
+      .md-preview > footer,
+      .md-preview > .md-dino {
+        animation-name: reveal-up-soft, fade-away-soft;
+        animation-range:
+          entry 0% entry 100%,
+          exit 0% exit 85%;
+      }
+      .md-callcard-scene {
+        animation-name: parallax-float, fade-away-soft;
+        animation-range:
+          cover,
+          exit 0% exit 85%;
+      }
+    }
+  }
+}
+@keyframes reveal-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    filter: blur(2px);
+  }
+}
+@keyframes fade-away-soft {
+  to {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-0.5rem);
+  }
+}
+@keyframes fade-away {
+  to {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-1.25rem) scale(0.97);
+  }
+}
+/* From well below, a little small and out of focus, easing into place. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(5rem) scale(0.96);
+    filter: blur(6px);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+}
+@keyframes parallax-sink {
+  to {
+    translate: 0 var(--sink);
+  }
+}
+@keyframes parallax-fade {
+  to {
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+@keyframes parallax-recede {
+  from {
+    translate: 0 calc(var(--recede) * -1);
+  }
+  to {
+    translate: 0 var(--recede);
+  }
+}
+@keyframes parallax-float {
+  from {
+    translate: 0 2rem;
+  }
+  to {
+    translate: 0 -2rem;
+  }
+}
+
+/* GEAR.md: the gear table as cards, an icon per kind of device. */
+.md-gear {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 0.6rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+.md-gear > li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.85rem;
+  align-items: center;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--list-hover) 45%, transparent);
+}
+.md-gear-icon {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--link) 14%, transparent);
+  color: var(--link);
+  font-size: 1.4rem;
+}
+.md-gear-kind {
+  align-self: end;
+  font-size: 0.75em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--description);
+}
+.md-gear-model {
+  align-self: start;
+  font-weight: 600;
+}
+
+/* The dinosaur game (```dino fence, under "Getting around"). It breaks out of the text column to run the
+   editor's whole width, bar a small margin (100cqw is the preview's scroll area; 100cqh, its height, is
+   what the README hero fills). */
+.md-scroll {
+  container-type: size;
+}
+/* A soft edge along the top of the preview: whatever scrolls up under it dissolves into the editor. */
+.md-scroll::before {
+  content: "";
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: block;
+  height: 3rem;
+  margin-bottom: -3rem;
+  background: linear-gradient(var(--editor) 15%, color-mix(in srgb, var(--editor) 60%, transparent) 55%, transparent);
+  pointer-events: none;
+}
+.md-dino {
+  --dino-margin: 1rem;
+  margin: 1rem calc(50% - 50cqw + var(--dino-margin)) 0;
+}
+.md-dino-stage {
+  container-type: inline-size;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font-mono);
+}
+/* 150px tall at full size; below the game's 600px minimum width the field scales down. */
+.md-dino-stage canvas {
+  display: block;
+  width: 100%;
+  height: min(150px, 25cqw);
+}
+@media (max-width: 767px) {
+  .md-dino {
+    --dino-margin: 0.5rem;
+  }
+}
+/* No frame or focus ring: the game sits straight on the page. While it has focus (and so takes
+   the keys), the controls under it brighten instead. */
+.md-dino-stage:focus,
+.md-dino-stage:focus-visible {
+  outline: none;
+}
+.md-dino:focus-within .md-dino-keys {
+  color: var(--editor-foreground);
+}
+.md-dino-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.6rem;
+  font-size: 0.8em;
+  color: var(--description);
+  transition: color 0.15s;
+}
+.md-dino-keys kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0 0.4em;
+  border: 1px solid var(--widget-border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--widget);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--editor-foreground);
+}
+
+/* A closing line at the foot of a document (GEAR.md's "Back to README.md"). */
+.md-preview > p:last-child {
+  margin-top: 2.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.9em;
+  color: var(--description);
+}
+/* The README's sign-off: "Made with ♥, ☕, and ✻ by <first name>", the ✻ drawn as Claude's logo. Hovering
+   it beats the heart, tips the cup and turns Claude's mark. */
+.md-footer {
+  margin-top: 2.75rem;
+  text-align: center;
+}
+/* The runner game closes the README, under the sign-off. */
+.md-footer + .md-dino {
+  margin-top: 2.25rem;
+}
+.md-preview .md-signoff {
+  margin: 0;
+  font-size: 0.85em;
+  color: var(--description);
+}
+.md-signoff svg {
+  display: inline-block;
+  vertical-align: -0.15em;
+  transition: transform 0.25s ease;
+}
+.md-signoff-love {
+  color: var(--ansi-red);
+}
+.md-signoff-coffee {
+  color: #b07d4f;
+}
+.md-signoff-claude {
+  color: var(--claude);
+}
+.md-footer:hover .md-signoff-love {
+  animation: signoff-beat 0.9s ease-in-out infinite;
+}
+.md-footer:hover .md-signoff-coffee {
+  transform: rotate(-14deg);
+}
+.md-footer:hover .md-signoff-claude {
+  transform: rotate(90deg);
+}
+@keyframes signoff-beat {
+  0%,
+  40%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.25);
+  }
+  28% {
+    transform: scale(1.1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-signoff svg {
+    transition: none;
+  }
+  .md-footer:hover .md-signoff-love {
+    animation: none;
+  }
+}
+.ascii-art {
+  display: block;
+  /* Re-rendered every animation frame: keep text layout cheap and contained. (No paint
+     containment: it would clip the waving hand, which swings slightly past the art's box.) */
+  contain: layout;
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
+  width: fit-content;
+  margin-inline: auto;
+  font-family: var(--font-mono);
+  font-size: calc(min(var(--art-width), 100cqw) / (var(--art-cols) * 0.6));
+  line-height: 1;
+  white-space: pre;
+  font-variant-ligatures: none;
+}
+
+/* The greeting's lettering and hand, cut into thin horizontal slices: a see-through gap at the foot
+   of every row. (A taller line-height can't do it: this font's █ is ~1.3 lines tall, so rows would
+   only separate once every letter had stretched.) */
+.ascii-slices {
+  display: block;
+  -webkit-mask-image: repeating-linear-gradient(#000 0 0.8em, transparent 0.8em 1em);
+  mask-image: repeating-linear-gradient(#000 0 0.8em, transparent 0.8em 1em);
+}
+
+/* The greeting's waving hand (see AsciiPortrait): pivots at the wrist, waves, then rests. */
+.ascii-wave {
+  position: absolute;
+  white-space: pre;
+  transform-origin: 45% 100%;
+  animation: ascii-wave 2.6s ease-in-out infinite;
+}
+/* It's also a button (see HighFiveHand): hover stills it under a pixel-hand cursor, click is a
+   high five. */
+button.high-five {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: var(--hand-cursor, grab);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+button.high-five:active {
+  cursor: var(--hand-cursor-pressed, grabbing);
+}
+button.high-five:focus-visible {
+  outline: 1px solid var(--focus);
+  outline-offset: 3px;
+}
+.ascii-wave.is-still {
+  animation: none;
+}
+.high-five-burst {
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+/* Comic impact lines, flying out from where the hands met. */
+.high-five-ray {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ansi-yellow);
+  transform-origin: 0 50%;
+  opacity: 0;
+  animation: high-five-ray 0.42s ease-out;
+}
+@keyframes high-five-ray {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateX(6px) scaleX(0.3);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(24px) scaleX(1);
+  }
+}
+.high-five-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: 700 14px var(--font-mono);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--ansi-yellow);
+  text-shadow: 1px 1px 0 color-mix(in srgb, var(--editor) 70%, transparent);
+  opacity: 0;
+  animation: high-five-text 0.9s ease-out;
+}
+@keyframes high-five-text {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -110%) scale(0.6);
+  }
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -190%) scale(1.12);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -290%) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .high-five-ray {
+    animation: none;
+  }
+  .high-five-text {
+    animation-name: high-five-fade;
+  }
+}
+@keyframes high-five-fade {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -190%);
+  }
+  15%,
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -190%);
+  }
+}
+@keyframes ascii-wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ascii-wave {
+    animation: none;
+  }
+}
+
+.code-link {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 3px;
+}
+.code-link:hover {
+  color: var(--link) !important;
+  text-decoration-color: currentColor;
+}
+
+/* Minimap: the same markup rendered tiny */
+.minimap .shiki {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 18px;
+}
+.minimap .line {
+  display: block;
+  min-height: 18px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.minimap .code-link {
+  text-decoration: none;
+}
+.minimap {
+  container-type: inline-size;
+}
+.minimap .line.art {
+  font-size: calc(100cqw / (var(--art-cols) * 0.6));
+  line-height: 1;
+  min-height: 0;
+  white-space: pre;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Sidebar: GitHub activity pane                                       */
+/* ------------------------------------------------------------------ */
+
+.gh-calendar {
+  --gh-cell: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+}
+.gh-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 13px repeat(7, var(--gh-cell));
+  gap: 3px;
+  width: max-content;
+}
+.gh-weekday,
+.gh-month {
+  font-size: 9px;
+  line-height: var(--gh-cell);
+  color: var(--description);
+  white-space: nowrap;
+}
+.gh-weekday {
+  /* The day names stay put while the weeks scroll under them. */
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--side);
+}
+.gh-month {
+  line-height: 13px;
+  overflow: visible;
+}
+.gh-day {
+  display: block;
+  flex-shrink: 0;
+  width: var(--gh-cell);
+  height: var(--gh-cell);
+  border-radius: 2px;
+  outline: 1px solid color-mix(in srgb, var(--side-foreground) 6%, transparent);
+  outline-offset: -1px;
+  background: color-mix(in srgb, var(--side-foreground) 9%, transparent);
+}
+.gh-day[data-level="1"] {
+  background: color-mix(in srgb, var(--ansi-green) 35%, transparent);
+}
+.gh-day[data-level="2"] {
+  background: color-mix(in srgb, var(--ansi-green) 58%, transparent);
+}
+.gh-day[data-level="3"] {
+  background: color-mix(in srgb, var(--ansi-green) 80%, transparent);
+}
+.gh-day[data-level="4"] {
+  background: var(--ansi-green);
+}

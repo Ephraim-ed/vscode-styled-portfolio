@@ -1,0 +1,11 @@
+{
+  "name": "vscode-portfolio",
+  "description": "Build a VS Code–themed developer portfolio (Next.js) from a resume: explorer, tabs, terminal, command palette, themes, and an optional AI chat assistant",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ephraim Velasco",
+    "url": "https://www.ephraimvelasco.dev"
+  },
+  "homepage": "https://www.ephraimvelasco.dev",
+  "keywords": ["portfolio", "vscode", "nextjs", "resume", "personal-website"]
+}

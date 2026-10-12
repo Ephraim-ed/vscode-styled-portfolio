@@ -1,0 +1,15 @@
+{
+  "name": "ephraim-skills",
+  "description": "Claude Code skills by Ephraim Velasco",
+  "owner": {
+    "name": "Ephraim Velasco",
+    "url": "https://www.ephraimvelasco.dev"
+  },
+  "plugins": [
+    {
+      "name": "vscode-portfolio",
+      "source": "./plugins/vscode-portfolio",
+      "description": "Build a VS Code–themed developer portfolio (Next.js) from a resume: explorer, tabs, terminal, command palette, themes, and an optional AI chat assistant"
+    }
+  ]
+}
